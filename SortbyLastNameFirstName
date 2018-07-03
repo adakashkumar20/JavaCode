@@ -1,0 +1,29 @@
+import java.util.*;
+public class Hello {
+    public static void main(String[] args) {
+        // TODO code application logic hereimport java.util.*;
+        Scanner s=new Scanner(System.in);
+	int n=s.nextInt();
+        s.nextLine();
+	String st[]=new String[n];
+        ArrayList sd=new ArrayList();
+	for(int i=0;i<n;i++){
+	    st[i]=s.nextLine();
+            String sf[]=st[i].split(" ");
+            sd.add(sf[1]);
+        }
+        Arrays.sort(st);
+        Collections.sort(sd);
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(st[j].equals(" ")){
+                    continue;
+                }
+                String sf[]=st[j].split(" ");
+                if(sd.get(i).equals(sf[1])){
+                    System.out.println(st[j]);
+                    st[j]=" ";
+                }
+            }
+        }
+    }
