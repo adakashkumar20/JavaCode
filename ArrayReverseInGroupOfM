@@ -1,0 +1,10 @@
+static int[] reverse(int[] numbers, int length, int M) {
+    for(int i=0;i<length && i+M<=length;i+=M){
+        for(int j=i,k=i+M-1;j<k;j++,k--){
+            numbers[j]+=numbers[k];
+            numbers[k]=numbers[j]-numbers[k];
+            numbers[j]=numbers[j]-numbers[k];
+        }
+    }
+    return numbers;
+}
