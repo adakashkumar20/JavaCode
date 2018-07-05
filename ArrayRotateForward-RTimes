@@ -1,0 +1,17 @@
+static int[] rotate(int[] numbers, int ARRAYLENGTH, int R) {
+    if(R>ARRAYLENGTH)
+        R%=ARRAYLENGTH;
+    for(int i=0;i<R;i++){
+        int temp=numbers[0];
+        int h=1;
+        for(int j=0;j<ARRAYLENGTH;j++){
+            numbers[h]+=temp;
+            temp=numbers[h]-temp;
+            numbers[h]=numbers[h]-temp;
+            h++;
+            if(h==ARRAYLENGTH)
+                h=0;
+        }
+    }
+    return numbers;
+}
